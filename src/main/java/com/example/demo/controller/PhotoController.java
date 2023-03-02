@@ -59,8 +59,8 @@ public class PhotoController {
 	}
 
 	@PostMapping("/create")
-	public String store(@Valid @ModelAttribute("photo") Photo photo, @RequestParam("isVisible") Boolean isVisible,
-			BindingResult bindigResult, Model model) {
+	public String store(@Valid @ModelAttribute("photo") Photo photo, BindingResult bindigResult,
+			@RequestParam("isVisible") Boolean isVisible, Model model) {
 
 		if (bindigResult.hasErrors()) {
 			model.addAttribute("categories", categoryRepository.findAll());
