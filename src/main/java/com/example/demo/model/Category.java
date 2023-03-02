@@ -13,7 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "categories")
@@ -23,7 +23,7 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@NotNull(message = "Field name cannot be empty")
+	@NotEmpty(message = "Field name cannot be empty")
 	private String name;
 
 	@JsonBackReference

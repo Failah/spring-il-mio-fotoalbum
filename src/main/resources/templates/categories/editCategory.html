@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit category</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body class="vs-fixed-height-100 text-white">
+	<div th:replace="~{fragments :: navbar}"></div>
+	<div class="container vs-custom-flex">
+		<div>
+			<h1>Edit Category</h1>
+			<form method="post" 
+				th:action="@{/categories/edit/{id}(id=${category.id})}" >
+
+				<div class="form-group mb-3">
+					<label class="pb-2 pt-2" for="name">Name</label> <input
+						type="text" class="form-control" id="name" name="name"
+						th:value="${category.name}" />
+					
+				</div>
+				<div>
+					<button type="submit"
+						class="btn btn-success mt-2 vs-inline-block vs-mt-7px">Save</button>
+					<div class="vs-inline-block">
+						<a th:href="@{/categories}" class="btn btn-primary btn-block">Back
+							to categories list</a>
+					</div>
+					<div class="vs-inline-block">
+						<a th:href="@{/photos}" class="btn btn-primary btn-block">Back
+							to photo's list</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
