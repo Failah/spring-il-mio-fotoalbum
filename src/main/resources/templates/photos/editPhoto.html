@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit Photo</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body>
+	<div th:replace="~{fragments :: navbar}"></div>
+	<div class="container mt-4">
+		<h1>Edit Photo</h1>
+
+		<form th:action="@{/photos/edit/{id}(id=${photo.id})}"
+			th:object="${photo}" method="post">
+
+			<div class="form-group">
+				<label for="name">Title</label> <input type="text"
+					class="form-control mt-2" id="title" name="title"
+					placeholder="Inserisci il nome della photo" th:field="*{title}"
+					th:errorClass="is-invalid">
+				<div th:if="${#fields.hasErrors('title')}" class="invalid-feedback">
+					<ul>
+						<li th:each="err : ${#fields.errors('title')}" th:text="${err}"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="form-group mt-3">
+				<label for="description">Descrizione</label>
+				<textarea class="form-control" id="description" name="description"
+					placeholder="Inserisci la descrizione della photo"
+					th:field="*{description}"></textarea>
+			</div>
+			<div class="form-group mt-3">
+				<label for="url">URL dell'immagine</label> <input type="text"
+					class="form-control" id="url" name="url"
+					placeholder="Inserisci l'URL dell'immagine della photo"
+					th:field="*{url}" th:errorClass="is-invalid">
+				<div th:if="${#fields.hasErrors('url')}" class="invalid-feedback">
+					<ul>
+						<li th:each="err : ${#fields.errors('url')}" th:text="${err}"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="form-group mt-3">
+				<label for="price">Tag</label> <input type="text"
+					class="form-control" id="tag" name="tag"
+					placeholder="Inserisci il tag della photo" th:field="*{tag}"
+					th:errorClass="is-invalid">
+			</div>
+
+			<div class="form-group mt-3">
+				<label for="isVisible">Visibility</label>
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="visibleYes"
+						name="isVisible" value="true" th:checked="${photo.isVisible == true}"> <label
+						class="form-check-label" for="visibleYes">Yes</label>
+				</div>
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="visibleNo"
+						name="isVisible" value="false" th:checked="${photo.isVisible == false}"> <label
+						class="form-check-label" for="visibleNo">No</label>
+				</div>
+			</div>
+
+			<div class="col-12 row mt-4">
+				<h3 class="col-12">Categories</h3>
+				<div th:each="category : ${categories}"
+					class="form-check col-2 ms-3">
+					<input type="checkbox" class="form-check-input"
+						th:value="${category.id}" th:field="*{categories}"
+						th:id="|category_${category.id}|"> <label
+						class="form-check-label" th:text="${category.name}"
+						th:for="|category_${category.id}|"></label>
+				</div>
+			</div>
+
+			<div>
+				<button type="submit" class="btn btn-primary">Save changes</button>
+			</div>
+		</form>
+
+	</div>
+
+	<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+.vs-bg-bisque {
+	background-color: bisque;
+}
+
+.vs-bg-homepage {
+	background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_52683-49099.jpg?w=1380&t=st=1677229778~exp=1677230378~hmac=ed7bfa98869b765bcd995f0da00fc0f85fb1ef7d19f29c06444ee3d58790cdbd');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.vs-index-button-position {
+	padding-top: 30vh;
+}
+
+.vs-bg-custom {
+	background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-gourmet-food-pizza-background-template-image_160185.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.vs-fixed-height-100 {
+	height: 100vh;
+	overflow: hidden
+}
+
+.vs-fixed-height-80 {
+	height: 88vh;
+}
+
+.vs-fixed-height-60 {
+	height: 60vh;
+	overflow: auto;
+}
+
+.vs-overflow {
+	overflow-y: auto;
+	max-height: 70vh;
+}
+
+.vs-border {
+	border: 5px solid black;
+	border-radius: 24px;
+}
+
+.vs-card-border {
+	border-top-left-radius: 18px;
+	border-top-right-radius: 18px;
+	max-height: 428px;
+}
+
+.vs-index-img-maxH {
+	max-height: 83px;
+}
+
+.vs-form-padding {
+	padding-top: 100px;
+}
+
+.vs-custom-flex {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.vs-text-grey {
+	color: #c3c3c3;
+}
+
+.vs-mt-7px {
+	margin-bottom: 7px;
+}
+
+.vs-inline-block {
+	display: inline-block;
+}
