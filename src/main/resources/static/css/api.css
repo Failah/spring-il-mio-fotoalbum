@@ -1,0 +1,44 @@
+body {
+    background-color: grey;
+}
+
+h1 {
+    color: white;
+}
+
+.card {
+    min-height: 470px;
+}
+
+#comments {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.comment {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment:last-of-type {
+    margin-bottom: 0;
+}
+
+.comment .username {
+    font-weight: bold;
+}
+
+.comment hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #ced4da;
+}
+
+.hidden {
+    display: none;
+    position: absolute;
+}

@@ -8,7 +8,7 @@
 	<link rel="stylesheet"
 	th:href="@{/css/main.css}" />
 </head>
-<body class="vs-fixed-height-100 text-white">
+<body class="vs-fixed-height-100 text-black">
 <div th:replace="~{fragments :: navbar}"></div>
 	<div class="container my-5 py-5">
 		<h1 class="mt-5 mb-4 text-center vs-form-padding">Add new Category</h1>
@@ -16,7 +16,7 @@
 			method="post">
 			
 			<div class="form-group">
-				<label for="name">Name</label> <input type="text"
+				<label class="h3" for="name">Category Name:</label> <input type="text"
 					class="form-control mt-2" id="name" name="name"
 					placeholder="Insert category name" th:field="*{name}"
 					th:errorClass="is-invalid">

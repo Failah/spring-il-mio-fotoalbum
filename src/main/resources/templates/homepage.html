@@ -1,10 +1,22 @@
-<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+<title>My Gallery</title>
 </head>
 <body>
-homepage
+	<div class="container">
+		<div class="row justify-content-center align-items-center" style="height: 90%">
+			<div class="col-3 text-center">
+				<a href="/photos" class="btn btn-dark">My Gallery</a>
+			</div>
+		</div>
+
+	</div>
+
+	<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
 </body>
 </html>

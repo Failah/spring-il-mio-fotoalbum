@@ -19,7 +19,7 @@ public class SecurityConfiguration {
 
 		String[] allRoles = { "USER", "ADMIN" };
 
-		http.authorizeHttpRequests()
+		http.csrf().disable().authorizeHttpRequests()
 				// AUTH PER CREARE E MODIFICARE FOTO: ADMIN
 				.requestMatchers("/photos/edit", "/photos/edit/**", "/photo/create", "/photo/create/**")
 				.hasAuthority("ADMIN")
