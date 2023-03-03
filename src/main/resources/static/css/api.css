@@ -2,12 +2,16 @@ body {
     background-color: grey;
 }
 
+img {
+	min-height: 290px;
+}
+
 h1 {
     color: white;
 }
 
 .card {
-    min-height: 470px;
+    min-height: 550px;
 }
 
 #comments {

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.model.Category;
 import com.example.demo.model.Photo;
 import com.example.demo.repository.CategoryRepository;
+import com.example.demo.repository.CommentRepository;
 import com.example.demo.repository.PhotoRepository;
 
 import jakarta.validation.Valid;
@@ -30,6 +31,9 @@ public class PhotoController {
 
 	@Autowired
 	CategoryRepository categoryRepository;
+
+	@Autowired
+	CommentRepository commentRepository;
 
 	@GetMapping
 	public String index(Model model) {
@@ -102,7 +106,7 @@ public class PhotoController {
 		}
 
 		photoRepository.save(photoForm);
-		return "redirect:/photos";
+		return "redirect:/photos/" + id;
 	}
 
 	@PostMapping("/delete/{id}")
@@ -130,6 +134,13 @@ public class PhotoController {
 		List<Photo> photos = photoRepository.findByTagContainingIgnoreCase(tag);
 		model.addAttribute("photos", photos);
 		return "photos/indexPhoto";
+	}
+
+	// DELETE COMMENT
+	@PostMapping("/{id}/deletecomment")
+	public String deleteComment(@PathVariable("id") Integer id, @RequestParam("commentId") Integer commentId) {
+		commentRepository.deleteById(commentId);
+		return "redirect:/photos/" + id;
 	}
 
 }
