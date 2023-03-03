@@ -41,11 +41,9 @@ public class CategoryController {
 	@PostMapping("/create")
 	public String store(@Valid @ModelAttribute("category") Category categoryForm, BindingResult bindingResult,
 			Model model) {
-
 		if (bindingResult.hasErrors()) {
 			return "categories/createCategory";
 		}
-
 		categoryRepository.save(categoryForm);
 		return "redirect:/categories";
 	}

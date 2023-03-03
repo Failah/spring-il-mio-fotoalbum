@@ -35,7 +35,7 @@
 				<label for="url">URL dell'immagine</label> <input type="text"
 					class="form-control" id="url" name="url"
 					placeholder="Inserisci l'URL dell'immagine della photo"
-					th:field="*{url}">
+					th:field="*{url}" th:errorClass="is-invalid">
 				<div th:if="${#fields.hasErrors('url')}" class="invalid-feedback">
 					<ul>
 						<li th:each="err : ${#fields.errors('url')}" th:text="${err}"></li>

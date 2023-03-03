@@ -84,8 +84,8 @@ function addComment(photoId) {
   })
     .then((res) => {
       console.log(res.data);
-      document.querySelector('#username').value = 'Type your nickname..';
-      document.querySelector('#content').value = 'Type your comment..';
+      document.querySelector('#username').value = '';
+      document.querySelector('#content').value = '';
       showComments(photoId);
     })
     .catch((err) => {
