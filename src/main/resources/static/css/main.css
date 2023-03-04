@@ -7,7 +7,11 @@ body {
 }
 
 .vs-red-text {
-	color: red;
+	color: red !important;
+}
+
+.vs-blue-text {
+	color: blue !important;
 }
 
 .vs-bg-bisque {

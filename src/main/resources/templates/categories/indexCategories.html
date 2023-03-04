@@ -7,14 +7,14 @@
 	th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
 <link rel="stylesheet" th:href="@{/css/main.css}" />
 </head>
-<body class="vs-fixed-height-100">
+<body>
 
 	<div th:replace="~{fragments :: navbar}"></div>
 
-	<div class="container mt-4 bg-light p-4 vs-fixed-height-80 vs-border">
+	<div class="container mt-4 bg-light p-4 vs-border">
 		<h1 class="mt-2 mb-4 text-center">Categories List</h1>
 
-		<div class="row vs-fixed-height-60 justify-content-center">
+		<div class="row justify-content-center">
 			<div class="col-md-12 w-75">
 				<table class="table table-striped"
 					th:if="${not #lists.isEmpty(categories)}">
@@ -57,6 +57,9 @@
 			</div>
 		</div>
 	</div>
+	
+	<div th:replace="~{fragments :: footer}"></div>
+	
 	<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
 
 </body>

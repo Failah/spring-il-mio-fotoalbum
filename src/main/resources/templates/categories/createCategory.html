@@ -5,19 +5,19 @@
 <title>Add new category</title>
 <link rel="stylesheet"
 	th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
-	<link rel="stylesheet"
-	th:href="@{/css/main.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
 </head>
 <body class="vs-fixed-height-100 text-black">
-<div th:replace="~{fragments :: navbar}"></div>
+	<div th:replace="~{fragments :: navbar}"></div>
 	<div class="container my-5 py-5">
-		<h1 class="mt-5 mb-4 text-center vs-form-padding">Add new Category</h1>
+		<h1 class="mt-5 mb-4 text-center vs-form-padding">Add new
+			Category</h1>
 		<form th:action="@{/categories/create}" th:object="${category}"
 			method="post">
-			
+
 			<div class="form-group">
-				<label class="h3" for="name">Category Name:</label> <input type="text"
-					class="form-control mt-2" id="name" name="name"
+				<label class="h3" for="name">Category Name:</label> <input
+					type="text" class="form-control mt-2" id="name" name="name"
 					placeholder="Insert category name" th:field="*{name}"
 					th:errorClass="is-invalid">
 				<div th:if="${#fields.hasErrors('name')}" class="invalid-feedback">
@@ -26,7 +26,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 			<div>
 				<button type="submit" class="btn btn-success mt-3">Add
 					category</button>
@@ -37,6 +37,11 @@
 
 		</form>
 	</div>
+
+	<div style="position: absolute; width: 100%; bottom: 0;">
+		<div th:replace="~{fragments :: footer}"></div>
+	</div>
+
 	<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
 
 </body>

@@ -55,7 +55,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="photo : ${photos}">
-						<td><img th:src="${photo.url}" style="min-height: 100px; width: 250px" />
+						<td><img class="border border-3 border-dark" th:src="${photo.url}" style="min-height: 100px; width: 250px" />
 						</td>
 						<td class="align-middle" th:text="${photo.id}"></td>
 						<td class="align-middle h4"><a th:href="@{/photos/{id}(id=${photo.id})}"
@@ -85,6 +85,8 @@
 			<h1>There are no photos to be shown!</h1>
 		</div>
 	</div>
+	
+	<div th:replace="~{fragments :: footer}"></div>
 
 
 	<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
