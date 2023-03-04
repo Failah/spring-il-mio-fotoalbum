@@ -58,9 +58,9 @@
 						<td><img th:src="${photo.url}" style="min-height: 100px; width: 250px" />
 						</td>
 						<td class="align-middle" th:text="${photo.id}"></td>
-						<td class="align-middle"><a th:href="@{/photos/{id}(id=${photo.id})}"
+						<td class="align-middle h4"><a th:href="@{/photos/{id}(id=${photo.id})}"
 							th:text="${photo.title}"></a></td>
-						<td class="align-middle" th:text="${photo.isVisible}"></td>
+						<td class="align-middle h5" th:classappend="${photo.isVisible} ? 'vs-green-text' : 'vs-red-text'" th:text="${photo.isVisible}"></td>
 
 						<td class="align-middle">
 							<div>

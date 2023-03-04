@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -33,6 +33,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
+                        <!-- link visibile solo per l'admin -->
+						<li class="nav-item" th:classappend="${isAdmin} ? '' : 'd-none'">
+							<a class="nav-link" href="/photos">Administration Panel</a>
+						</li>
                     </ul>
                 </div>
             </div>

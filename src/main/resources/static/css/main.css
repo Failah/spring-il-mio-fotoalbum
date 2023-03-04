@@ -2,6 +2,14 @@ body {
 	background-color: bisque;
 }
 
+.vs-green-text {
+	color: green;
+}
+
+.vs-red-text {
+	color: red;
+}
+
 .vs-bg-bisque {
 	background-color: bisque;
 }
