@@ -16,9 +16,9 @@
 			th:object="${photo}" method="post">
 
 			<div class="form-group">
-				<label for="name">Title</label> <input type="text"
+				<label class="fw-bold" for="name">Title:</label> <input type="text"
 					class="form-control mt-2" id="title" name="title"
-					placeholder="Inserisci il nome della photo" th:field="*{title}"
+					 th:field="*{title}"
 					th:errorClass="is-invalid">
 				<div th:if="${#fields.hasErrors('title')}" class="invalid-feedback">
 					<ul>
@@ -27,13 +27,12 @@
 				</div>
 			</div>
 			<div class="form-group mt-3">
-				<label for="description">Descrizione</label>
+				<label class="fw-bold" for="description">Description</label>
 				<textarea class="form-control" id="description" name="description"
-					placeholder="Inserisci la descrizione della photo"
 					th:field="*{description}"></textarea>
 			</div>
 			<div class="form-group mt-3">
-				<label for="url">URL dell'immagine</label> <input type="text"
+				<label class="fw-bold" for="url">Image URL:</label> <input type="text"
 					class="form-control" id="url" name="url"
 					placeholder="Inserisci l'URL dell'immagine della photo"
 					th:field="*{url}" th:errorClass="is-invalid">
@@ -44,13 +43,13 @@
 				</div>
 			</div>
 			<div class="form-group mt-3">
-				<label for="tag">Tag</label> <input type="text" class="form-control"
+				<label class="fw-bold" for="tag">Tags:</label> <input type="text" class="form-control"
 					id="tag" name="tag" placeholder="Inserisci il tag della photo"
 					th:field="*{tag}" th:errorClass="is-invalid">
 			</div>
 
 			<div class="form-group mt-3">
-				<label for="isVisible">Visibility</label>
+				<label class="fw-bold" for="isVisible">Visibility:</label>
 				<div class="form-check">
 					<input type="radio" class="form-check-input" id="visibleYes"
 						name="isVisible" value="true"
@@ -66,7 +65,7 @@
 			</div>
 
 			<div class="col-12 row mt-4">
-				<h3 class="col-12">Categories</h3>
+				<h3 class="col-12">Categories:</h3>
 				<div th:each="category : ${categories}"
 					class="form-check col-2 ms-3">
 					<input type="checkbox" class="form-check-input"

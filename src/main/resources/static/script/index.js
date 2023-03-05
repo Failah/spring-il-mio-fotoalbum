@@ -9,7 +9,7 @@ function photoList() {
       res.data.forEach(photo => {
         const photoCard = `
             <div class="col-md-4 mb-4">
-              <div class="card">
+              <div class="card card-hover">
                 <a href="/mygallery/show?id=${photo.id}">
                   <img src="${photo.url}" class="card-img-top" alt="${photo.title}">
                 </a>

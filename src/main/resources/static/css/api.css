@@ -10,6 +10,8 @@ h1 {
     color: white;
 }
 
+
+
 .vs-red-text {
 	color: red !important;
 }
@@ -17,6 +19,15 @@ h1 {
 .card {
     min-height: 550px;
 }
+
+.card-hover:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 3px solid black;
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
 
 .vs-bg-custom-api {
 	background-image: url('https://puu.sh/JAQ38/510863839f.jpg');
