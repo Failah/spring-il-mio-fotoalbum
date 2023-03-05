@@ -18,6 +18,12 @@ h1 {
     min-height: 550px;
 }
 
+.vs-bg-custom-api {
+	background-image: url('https://puu.sh/JAQ38/510863839f.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 #comments {
     background-color: #f8f9fa;
     padding: 20px;

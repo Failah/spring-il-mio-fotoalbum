@@ -18,8 +18,14 @@ body {
 	background-color: bisque;
 }
 
+.vs-display-center {
+	justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .vs-bg-homepage {
-	background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_52683-49099.jpg?w=1380&t=st=1677229778~exp=1677230378~hmac=ed7bfa98869b765bcd995f0da00fc0f85fb1ef7d19f29c06444ee3d58790cdbd');
+	background-image: url('https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -29,7 +35,7 @@ body {
 }
 
 .vs-bg-custom {
-	background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-gourmet-food-pizza-background-template-image_160185.jpg');
+	background-image: url('https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 	background-size: cover;
 	background-repeat: no-repeat;
 }

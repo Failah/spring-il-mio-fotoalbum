@@ -7,18 +7,59 @@
 <link rel="stylesheet" th:href="@{/css/main.css}" />
 <title>My Gallery</title>
 </head>
-<body>
-	<div class="container">
-		<div class="row justify-content-center align-items-center"
-			style="height: 90%">
-			<div class="col-3 text-center">
-				<a href="/photos" class="btn btn-dark">My Gallery</a>
+<body class="vs-bg-homepage">
+
+
+	<div class="container" style="height: 100vh">
+		<div class="row vs-display-center">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-3 text-center">
+					<a href="/photos" class="btn btn-dark p-3">Join your Gallery!</a>
+				</div>
+			</div>
+			<h2 class="text-center">Start sharing your awesome shoots with other people!</h2>
+			<div class="row mt-5">
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top"
+							src="https://picsum.photos/id/237/300/200" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="card">
+						<img class="card-img-top"
+							src="https://picsum.photos/id/236/300/200" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top"
+							src="https://picsum.photos/id/238/300/200" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
 	</div>
 
-	<div th:replace="~{fragments :: footer}"></div>
 
 	<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
 </body>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/api.css">
 </head>
 
-<body>
+<body class="vs-bg-custom-api">
     <div th:replace="~{fragments :: header}"></div>
 
     <div class="container mt-3 mb-5">
@@ -28,14 +28,14 @@
             <p>No comments yet.</p>
         </div>
         <div class="mt-4">
-            <h3>Add a comment:</h3>
+            <h3 class="text-white">Add a comment:</h3>
             <form onsubmit="event.preventDefault(); addComment(photoId)">
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label class="text-white h5" for="username">Username:</label>
                     <input placeholder="Type your nickname.." type="text" class="form-control" id="username" required>
                 </div>
                 <div class="form-group my-3">
-                    <label for="content">Comment</label>
+                    <label class="text-white h5" for="content">Comment:</label>
                     <textarea placeholder="Type your comment.." class="form-control" id="content" rows="3"
                         required></textarea>
                 </div>
