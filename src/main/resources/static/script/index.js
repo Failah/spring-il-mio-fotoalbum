@@ -56,6 +56,3 @@ function searchPhotos() {
 document.querySelector('#search-input').addEventListener('input', () => {
   searchPhotos();
 });
-
-
-
