@@ -2,11 +2,38 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Si è verificato un errore</title>
+<title>Error page</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
 </head>
-<body>
-	<h1>Si è verificato un errore</h1>
-	
-	<div th:replace="~{fragments :: footer}"></div>
+<body class="vs-bg-custom">
+	<div th:replace="~{fragments :: navbar}"></div>
+
+	<div class="container my-5">
+		<div class="row justify-content-center">
+			<div class="col-md-8 text-center">
+				<img
+					src="https://images.pexels.com/photos/374918/pexels-photo-374918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+					alt="Error" class="img-fluid mb-4 w-50">
+				<h1 class="display-4 fw-semibold">Oops! An error has occurred.</h1>
+				<h3 class="lead fw-semibold">We're sorry, something went wrong with your
+					request.</h3>
+				<h4 class="fw-semibold">The problem may be temporary or you may have entered an
+					incorrect web address. We recommend checking the URL or trying
+					again later.</h4>
+				<div class="mt-5">
+					<a href="/photos" class="btn btn-lg btn-primary">Back to the
+						homepage</a> <a href="mailto:supporto@miosito.com"
+						class="btn btn-lg btn-light mx-3">Contact us!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="position: absolute; bottom: 0; width: 100%">
+		<div th:replace="~{fragments :: footer}"></div>
+	</div>
+
 </body>
 </html>
