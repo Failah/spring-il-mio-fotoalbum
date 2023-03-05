@@ -2,9 +2,11 @@ console.log("Index: JS OK!");
 
 photoList();
 
+// Aggiungi questo codice al metodo photoList()
 function photoList() {
   axios.get('http://localhost:8080/api/photos')
     .then((res) => {
+		console.log(typeof res.data);
       const photoListContainer = document.querySelector('#photo-list');
       res.data.forEach(photo => {
         const photoCard = `
@@ -27,6 +29,24 @@ function photoList() {
             </div>
           `;
         photoListContainer.insertAdjacentHTML('beforeend', photoCard);
+      });
+
+      const categorySelect = document.querySelector('#category-select');
+      const categories = res.data.map(photo => photo.category).filter((category, index, self) => self.indexOf(category) === index);
+      categories.forEach(category => {
+        const option = `<option value="${category}">${category}</option>`;
+        categorySelect.insertAdjacentHTML('beforeend', option);
+      });
+
+      categorySelect.addEventListener('change', () => {
+        const selectedCategory = categorySelect.value;
+        photos.forEach(photo => {
+          if (selectedCategory === '' || photo.category === selectedCategory) {
+            photo.classList.remove('hidden');
+          } else {
+            photo.classList.add('hidden');
+          }
+        });
       });
     })
     .catch((err) => {

@@ -20,16 +20,20 @@
 	<div th:replace="~{fragments :: header}"></div>
 
 	<div class="container mt-5 pt-4">
-		<h1 class="mb-4">Photo Gallery</h1>
-		<div class="row">
-			<div class="col-md-6">
-				<input type="text" id="search-input" class="form-control mb-4"
-					placeholder="Search a photo by title or tags...">
-			</div>
-		</div>
-		
-		<div class="row" id="photo-list" style="min-height: 56vh;"></div>
-	</div>
+    <h1 class="mb-4">Photo Gallery</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" id="search-input" class="form-control mb-4" placeholder="Search a photo by title or tags...">
+        </div>
+        <div class="col-md-6">
+            <select id="category-select" class="form-control mb-4">
+                <option value="" selected>All categories</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" id="photo-list" style="min-height: 56vh;"></div>
+</div>
+
 
 <div>
 	<div th:replace="~{fragments :: footer}"></div>

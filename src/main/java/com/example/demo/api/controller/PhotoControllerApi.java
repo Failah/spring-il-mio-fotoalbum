@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.example.demo.model.Category;
 import com.example.demo.model.Comment;
 import com.example.demo.model.Photo;
+import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.CommentRepository;
 import com.example.demo.repository.PhotoRepository;
 
@@ -35,6 +37,9 @@ public class PhotoControllerApi {
 	@Autowired
 	CommentRepository commentRepository;
 
+	@Autowired
+	CategoryRepository categoryRepository;
+
 	@GetMapping
 	public List<Photo> index(@RequestParam(required = false) String title) {
 		List<Photo> photos;
@@ -43,6 +48,7 @@ public class PhotoControllerApi {
 		} else {
 			photos = photoRepository.findAll();
 		}
+		List<Category> categories = categoryRepository.findAll();
 		// filtra le foto per isVisible = true
 		return photos.stream().filter(Photo::isVisible).collect(Collectors.toList());
 	}
