@@ -94,6 +94,10 @@ body {
 	margin-bottom: 7px;
 }
 
+.vs-negative-mt {
+	margin-top: -200px;
+}
+
 .vs-inline-block {
 	display: inline-block;
 }

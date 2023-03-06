@@ -28,24 +28,24 @@ function photoList() {
 
 			photosData.forEach(photo => {
 				const photoCard = `
-        <div class="col-md-4 mb-4" data-category="${photo.category}" id="photo-${photo.id}">
-          <div class="card card-hover">
-            <a href="/mygallery/show?id=${photo.id}">
-              <img src="${photo.url}" class="card-img-top" alt="${photo.title}">
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="/mygallery/show?id=${photo.id}">${photo.title}</a>
-              </h5>
-              <p class="card-text">${photo.description}</p>
-              <p class="card-text tags">Tags: ${photo.tag}</p>
-            </div>
-            <div class="p-3">
-              <a href="/mygallery/show?id=${photo.id}" class="btn btn-primary">Show details</a>
-            </div>
-          </div>
-        </div>
-      `;
+			        <div class="col-md-4 mb-4" data-category="${photo.category}" id="photo-${photo.id}">
+			          <div class="card card-hover">
+			            <a href="/mygallery/show?id=${photo.id}">
+			              <img src="${photo.url}" class="card-img-top" alt="${photo.title}">
+			            </a>
+			            <div class="card-body">
+			              <h5 class="card-title">
+			                <a href="/mygallery/show?id=${photo.id}">${photo.title}</a>
+			              </h5>
+			              <p class="card-text">${photo.description}</p>
+			              <p class="card-text tags">Tags: ${photo.tag}</p>
+			            </div>
+			            <div class="p-3">
+			              <a href="/mygallery/show?id=${photo.id}" class="btn btn-primary">Show details</a>
+			            </div>
+			          </div>
+			        </div>
+			      `;
 				photoListContainer.insertAdjacentHTML('beforeend', photoCard);
 			});
 		})
@@ -53,7 +53,6 @@ function photoList() {
 			console.error('Errore nella richiesta', err);
 			alert('Errore durante la richiesta!');
 		});
-
 }
 
 function searchPhotos() {
@@ -69,14 +68,15 @@ function searchPhotos() {
 		const tag = photo.querySelector('.tags').textContent.toUpperCase();
 		const category = photo.dataset.category.toUpperCase();
 
-		if ((name.includes(titleFilter) || tag.includes(titleFilter)) && (categoryFilter === '' || category === categoryFilter)) {
-			photo.classList.remove('hidden');
-		} else {
-			photo.classList.add('hidden');
+		if (categoryFilter === '' || category === categoryFilter) {
+			if (name.includes(titleFilter) || tag.includes(titleFilter)) {
+				photo.classList.remove('hidden');
+			} else {
+				photo.classList.add('hidden');
+			}
 		}
 	});
 }
-
 
 document.querySelector('#search-input').addEventListener('input', () => {
 	searchPhotos();
