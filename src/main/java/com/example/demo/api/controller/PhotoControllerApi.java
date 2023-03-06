@@ -1,6 +1,8 @@
 package com.example.demo.api.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -41,7 +43,7 @@ public class PhotoControllerApi {
 	CategoryRepository categoryRepository;
 
 	@GetMapping
-	public List<Photo> index(@RequestParam(required = false) String title) {
+	public ResponseEntity<Map<String, List<?>>> index(@RequestParam(required = false) String title) {
 		List<Photo> photos;
 		if (title != null && !title.isBlank()) {
 			photos = photoRepository.findByTitleContainingIgnoreCase(title);
@@ -50,7 +52,16 @@ public class PhotoControllerApi {
 		}
 		List<Category> categories = categoryRepository.findAll();
 		// filtra le foto per isVisible = true
-		return photos.stream().filter(Photo::isVisible).collect(Collectors.toList());
+		List<Photo> visiblePhotos = photos.stream().filter(Photo::isVisible).collect(Collectors.toList());
+		Map<String, List<?>> result = new HashMap<>();
+		result.put("photos", visiblePhotos);
+		result.put("categories", categories);
+
+		if (result.size() <= 0) {
+			return new ResponseEntity<Map<String, List<?>>>(HttpStatus.NO_CONTENT);
+		} else {
+			return new ResponseEntity<Map<String, List<?>>>(result, HttpStatus.OK);
+		}
 	}
 
 	@GetMapping("/{id}")
