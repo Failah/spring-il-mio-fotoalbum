@@ -1,5 +1,12 @@
 body {
 	background-color: bisque;
+	padding-top: 65px;
+}
+
+.vs-fixed-navbar {
+	position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .vs-green-text {
