@@ -28,7 +28,10 @@
 								class="form-control" id="password" name="password" required>
 						</div>
 						<button type="submit" class="btn btn-success btn-block mt-3">Submit</button>
+						<div class="alert alert-danger mt-3" th:if="${param.error}">
+							Invalid username and/or password</div>
 					</form>
+
 				</div>
 			</div>
 		</div>
