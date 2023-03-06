@@ -19,9 +19,9 @@ function photoList() {
 				const selectedCategory = categorySelect.value;
 				photosData.forEach(photo => {
 					if (selectedCategory === '' || photo.categories.some(category => category.name === selectedCategory)) {
-						photoListContainer.querySelector(`#photo-${photo.id}`).classList.remove('hidden');
+						photoListContainer.querySelector(`#photo-${photo.id}`).classList.remove('d-none');
 					} else {
-						photoListContainer.querySelector(`#photo-${photo.id}`).classList.add('hidden');
+						photoListContainer.querySelector(`#photo-${photo.id}`).classList.add('d-none');
 					}
 				});
 			});
@@ -59,23 +59,18 @@ function photoList() {
 
 function searchPhotos() {
 	const titleInput = document.querySelector('#search-input');
-	const categorySelect = document.querySelector('#category-select');
 	const titleFilter = titleInput.value.toUpperCase();
-	const categoryFilter = categorySelect.value.toUpperCase();
 	const photoListContainer = document.querySelector('#photo-list');
 	const photos = photoListContainer.querySelectorAll('.col-md-4.mb-4');
 
 	photos.forEach((photo) => {
 		const name = photo.querySelector('.card-title a').textContent.toUpperCase();
 		const tag = photo.querySelector('.tags').textContent.toUpperCase();
-		const category = photo.dataset.category.toUpperCase();
 
-		if (categoryFilter === '' || category === categoryFilter) {
 			if (name.includes(titleFilter) || tag.includes(titleFilter)) {
 				photo.classList.remove('hidden');
 			} else {
 				photo.classList.add('hidden');
-			}
 		}
 	});
 }
