@@ -38,7 +38,9 @@ function photoList() {
 			                <a href="/mygallery/show?id=${photo.id}">${photo.title}</a>
 			              </h5>
 			              <p class="card-text">${photo.description}</p>
-			              <p class="card-text tags">Tags: ${photo.tag}</p>
+			              <p>
+			               <span>Tags: </span><span class="card-text tags">${photo.tag}</span>
+			              </p>
 			            </div>
 			            <div class="p-3">
 			              <a href="/mygallery/show?id=${photo.id}" class="btn btn-primary">Show details</a>

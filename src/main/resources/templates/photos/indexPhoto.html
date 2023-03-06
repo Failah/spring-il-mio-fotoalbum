@@ -38,6 +38,7 @@
 			<div class="mt-5 mb-2 text-center">
 				<a th:href="@{/photos/create}" class="btn btn-success btn-block">Add
 					new photo</a>
+					<a th:href="@{/photos}" class="btn btn-primary btn-block ms-5">Display all Photos</a>
 			</div>
 		</div>
 
@@ -64,7 +65,7 @@
 
 						<td class="align-middle">
 							<div>
-								<a class="btn btn-primary"
+								<a class="btn btn-success"
 									th:href="@{/photos/edit/{id}(id=${photo.id})}">Edit Photo</a>
 							</div>
 						</td>
